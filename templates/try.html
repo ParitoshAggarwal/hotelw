@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome | Hotel Calender</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Paritosh Aggarwal">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        #wrap{
+            display: inline;
+            width:25%;
+            float:left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BULK OPERATION:</h1>
+    <p>For bulk requests url to the api should be of form:<br>1. localhost/bulk/fromMonth/fromDate/toMonth/toDate/sord/condition/price/quant<br>2.Where
+    sord is single room or double room- 's' for single 'd' for double<br>3.Condition  1: 'monday',
+        2: 'tuesday',
+        3: 'wednesday',
+        4: 'thursday',
+        5: 'friday',
+        6: 'saturday',
+        7: 'sunday',
+        8: 'weakdays',
+        9: 'weakends', 10:'alldays',<br>4.Example: localhost/bulk/july/2/july/13/s/10/1200/2 <p>
+    <h1>Single Updates</h1>
+    <p>For single updates of prices and quantity of rooms url req to api should be like:<br>1. single/month/date/sord/quant<br>2.
+sprice/month/date/sord/price<br>3. For example; localhost/single/july/2/d/1</p>
+    <h1>Testing</h1>
+    <a href="http://127.0.0.1:8000/single/july/2/d/1">Turn July 2 double rooms to 1</a>
+    <h2>DATABASE</h2>
+    {% for obj in q %}
+        <div id="wrap">
+            <button>{{ obj.date }}/{{ obj.month }}/2016</button>
+            <p>Single Room Price: {{ obj.single_price }}</p>
+            <p>Double Room Price {{ obj.double_price }}</p>
+            <p>Single Rooms Available {{ obj.single }}</p>
+            <p>Double rooms Available {{ obj.double }}</p>
+        </div>
+    {% endfor %}
+</body>
+
+</html>
