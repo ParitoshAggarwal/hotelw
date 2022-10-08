@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^single/(?P<mmonth>\w+)/(?P<ddate>\w+)/(?P<sord>\w+)/(?P<quant>\w+)$', quantitySingle), #single/july/2/s/3
     url(r'^sprice/(?P<mmonth>\w+)/(?P<ddate>\w+)/(?P<sord>\w+)/(?P<price>\w+)$', pricesingle),    #sprice/july/2/s/1000
     url(r'^bulk/(?P<fromMonth>\w+)/(?P<fromDate>\w+)/(?P<toMonth>\w+)/(?P<toDate>\w+)/(?P<sord>\w+)/(?P<condition>\w+)/(?P<price>\w+)/(?P<quant>\w+)',bulk),
+    url(r'^bulk/(?P<fromMonth>\w+)/(?P<fromDate>\w+)/(?P<toMonth>\w+)/(?P<toDate>\w+)/(?P<sord>\w+)/(?P<condition>\w+)/(?P<price>\w+)/(?P<quant>\w+)',bulk2),
     url(r'^$', ind),
 ]
